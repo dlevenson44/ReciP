@@ -1,0 +1,18 @@
+<% include ../partials/boilerplate %>
+
+<div class='register-container'>
+	
+	<form method='POST' action='/auth/register'>
+		<input class="register-box" name='username' type='text' placeholder='Username' required />
+		<input class="register-box" name='password' type='password' placeholder='Password' required />
+		<input class="register-box" name='email' type='email' placeholder='Email' required />
+		<input class="register-box" name='name' type='text' placeholder='Name' required/>
+		<input id="register-submit" type='submit' value='Register' />
+	</form>
+</div>
+<script src="src/jquery.js"></script>
+<script src="src/main.js" ></script>
+
+
+
+<% include ../partials/end %>
