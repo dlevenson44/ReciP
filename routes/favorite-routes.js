@@ -1,8 +1,8 @@
 const express = require('express')
 const faveRoutes = express.Router()
 
-const favoriteController = require('../contorllers/recipes-controller')
-const usersController = require('../controllers/users-controler')
+const favoriteController = require('../controllers/recipes-controller')
+const usersController = require('../controllers/users-controller')
 
 faveRoutes.get('/', favoriteController.index)
 faveRoutes.get('/:id', favoriteController.show)

@@ -17,7 +17,7 @@ authRouter.post('/login', passport.authenticate('local', {
 	failureFlash: true,
 }))
 
-authRouter.get('/register', authHelper.loginRedirect, (req, res) => {
+authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
 	res.render('auth/register', {
 		auth: (req.user) ? true : false,
 	})

@@ -10,7 +10,7 @@ const options = {}
 init()
 
 passport.use(
-	new.LocalStrategy(options, (username, password, done) => {
+	new LocalStrategy(options, (username, password, done) => {
 		User.findByUserName(username)
 		.then(user => {
 			if(!user) {

@@ -1,7 +1,7 @@
 const express = require('express')
-const recipeRoutes = express.Router()
+const recipesRoutes = express.Router()
 
-const recipesController = require('../contorllers/recipes-controller')
+const recipesController = require('../controllers/recipes-controller')
 const usersController = require('../controllers/users-controller')
 
 recipesRoutes.get('/', recipesController.index)
