@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS favoriterecipes(
 	link VARCHAR,
 	img VARCHAR,
 	diet VARCHAR
-)
+);
 
 CREATE TABLE IF NOT EXISTS users(
 	id SERIAL PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users(
 	password_digest TEXT NOT NULL,
 	email VARCHAR UNIQUE NOT NULL,
 	name VARCHAR
-)
+);
 
 ALTER TABLE favoriterecipes
-ADD COLUMN user_id INTEGER REFERENCES users(id)
+ADD COLUMN user_id INTEGER REFERENCES users(id);
