@@ -1,0 +1,19 @@
+<header>
+<div class="nav-container">
+	<nav>
+		<div id="sidebar">
+		
+				<button class="nav-button"><a href="/">Home</a></button>
+			<% if (auth) { %>
+				<button class="nav-button"><a href="/favorite_recipes">Favorites</a></button>
+				<button class="nav-button"><a href="/auth/logout">Logout</a></button>
+				<% } else { %>
+				<button class="nav-button"><a href="/auth/login">Login</a></button>
+				<button class="nav-button"><a href="/auth/register">Register</a></button>
+
+				<% } %>
+		
+	</div>
+	</nav>
+</div>
+</header>
