@@ -1,6 +1,6 @@
 const express = require('express')
 const recipesRoutes = express.Router()
-const recipeHelpers = require('../services/recipes/recipe-helper')
+const recipeHelpers = require('../services/recipes/recipe-helpers')
 
 const recipesController = require('../controllers/recipes-controller')
 const usersController = require('../controllers/users-controller')
