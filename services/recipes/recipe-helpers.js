@@ -21,8 +21,19 @@ function getRecipes(req, res, next) {
 	})
 }
 
+function formatApiData(req, res, next) {
+	const recipes = []
+	for (let recipe in res.locals.apiData) {
+		recipes.push(recipe)
+	}
+	console.log(recipes)
+	res.locals.recipes = recipes
+	next()
+}
+
 module.exports = {
 	getRecipes: getRecipes,
+	formatApiData: formatApiData,
 }
 
 
