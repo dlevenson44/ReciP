@@ -13,7 +13,7 @@ recipesRoutes.get('/add', (req, res) => {
 	})
 })
 
-recipesRoutes.get('/:search', recipeHelpers.getRecipes, recipesController.sentApiRecipe)
+recipesRoutes.get('/:search', recipeHelpers.getRecipes, recipesController.sendApiRecipe)
 
 recipesRoutes.post('/', recipesController.create)
 recipesRoutes.get('/:id', recipesController.show)

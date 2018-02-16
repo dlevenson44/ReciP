@@ -2,7 +2,7 @@
 function getRecipes(e) {
     e.preventDefault()
     console.log('clickced')
-    fetch(`/recipes/${e.target.search.value}`)
+    fetch(`/recipe/${e.target.search.value}`)
     .then(res => res.json())
     .then(res => {
         console.log(res)
