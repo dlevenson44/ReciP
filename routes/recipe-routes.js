@@ -5,7 +5,7 @@ const recipeHelpers = require('../services/recipes/recipe-helpers')
 const recipesController = require('../controllers/recipes-controller')
 const usersController = require('../controllers/users-controller')
 
-recipesRoutes.get('/', recipeHelpers.getRecipes, recipeHelpers.formatApiData, recipesController.index)
+// recipesRoutes.get('/', recipeHelpers.getRecipes, recipeHelpers.formatApiData, recipesController.index)
 
 recipesRoutes.get('/add', (req, res) => {
 	res.render('favorite_recipes', {
@@ -13,7 +13,7 @@ recipesRoutes.get('/add', (req, res) => {
 	})
 })
 
-recipeRouter.get('/:search', recipeHelpers.getRecipes, recipesController.sendApiRecipe)
+recipesRoutes.get('/:search', recipeHelpers.getRecipes, recipesController.sentApiRecipe)
 
 recipesRoutes.post('/', recipesController.create)
 recipesRoutes.get('/:id', recipesController.show)
