@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 })
 
 const recipesRoutes = require('./routes/recipe-routes')
-app.use('/favorite_recipes', recipesRoutes)
+app.use('/recipes', recipesRoutes)
 
 const faveRoutes = require('./routes/favorite-routes')
 app.use('/favorite_recipes', faveRoutes)
