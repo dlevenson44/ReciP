@@ -30,6 +30,13 @@ recipesController.show = (req, res) => {
 	})
 }
 
+recipesController.sentApiRecipe = (req, res) => {
+	res.json({
+		message: `User searched for ${req.params.search}`,		
+	})
+	console.log(res.locals)
+}
+
 recipesController.create = (req, res) => {
 	console.log(req.body, 'from create/recipescontroller')
 	Recipe.create({
