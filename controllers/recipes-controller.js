@@ -32,8 +32,8 @@ recipesController.show = (req, res) => {
 
 recipesController.sentApiRecipe = (req, res) => {
 	res.json({
-		message: `User searched for ${req.params.search}`,
-		// recipe: res.locals	
+		message: `${res}`,
+		recipe: res.hits	
 	})
 	console.log(res)
 }

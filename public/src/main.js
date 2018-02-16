@@ -1,8 +1,9 @@
 // function takes in search value and checks database for recipes
 function getRecipes(e) {
     e.preventDefault()
+    console.log('clickced')
     fetch(`/recipes/${e.target.search.value}`)
-    .then( res => res.json())
+    .then(res => res.json())
     .then(res => {
         console.log(res)
     })
