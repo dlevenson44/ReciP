@@ -5,7 +5,8 @@ const sendToDB = (recipeFavorite) => {
         url: '/favorite_recipes',
         type: 'POST',
         data: recipeFavorite
-    }).done((data) => {
+    })
+    .done((data) => {
         console.log(data)
         window.location = `/favorite_recipes/`
     })
@@ -35,16 +36,24 @@ function getRecipes(e) {
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
+            // initiate object to add favorite recipes
+            const recipeFavorite = {
+                title: recipeName,
+                link: recipeLink,
+                img: recipeImg,
+                diet: recipeDiet,
+            }
+
             // initiate form and set attributes
             let form = document.createElement('form')
-            $(form).attr('method', 'POST').attr('action', '/favorite_recipes/<%= recipeFavorite.id %>?_method=POST').attr('class', 'add-form')
+            $(form).attr('method', 'POST').attr('action', '/favorite_recipes/').attr('class', 'add-form')
 
             // initiate button and set attributes
             let button = document.createElement('input')
             $(button).attr('type', 'submit').attr('value', 'Add Favorite').attr('class', 'submit-button')
             button.addEventListener('click', function() {
                 e.preventDefault()
-                sendToDb(recipeFavorite)
+                sendToDB(recipeFavorite)
             })
 
             // create HTML attributes
