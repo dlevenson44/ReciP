@@ -1,3 +1,16 @@
+// send favorites to database
+const sendToDB = (recipeFavorite) => {
+    console.log(`Saving ${recipeFavorite}`)
+    $.ajax({
+        url: '/favorite_recipes',
+        type: 'POST',
+        data: recipeFavorite
+    }).done((data) => {
+        console.log(data)
+        window.location = `/favorite_recipes/`
+    })
+}
+
 // function takes in search value and checks database for recipes
 function getRecipes(e) {
     e.preventDefault()
@@ -29,6 +42,10 @@ function getRecipes(e) {
             // initiate button and set attributes
             let button = document.createElement('input')
             $(button).attr('type', 'submit').attr('value', 'Add Favorite').attr('class', 'submit-button')
+            button.addEventListener('click', function() {
+                e.preventDefault()
+                sendToDb(recipeFavorite)
+            })
 
             // create HTML attributes
             let title = document.createElement('h1')
