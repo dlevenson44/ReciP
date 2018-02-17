@@ -22,6 +22,14 @@ function getRecipes(e) {
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
+            // initiate form and set attributes
+            let form = document.createElement('form')
+            $(form).attr('method', 'POST').attr('action', '/favorite_recipes/<%= recipeFavorite.id %>?_method=POST').attr('class', 'add-form')
+
+            // initiate button and set attributes
+            let button = document.createElement('input')
+            $(button).attr('type', 'submit').attr('value', 'Add Favorite').attr('class', 'submit-button')
+
             // create HTML attributes
             let title = document.createElement('h1')
             let diet = document.createElement('p')
@@ -33,20 +41,14 @@ function getRecipes(e) {
             let img = document.createElement('img')    
 
             // set classes
-            title.setAttribute('class', 'recipe-name')
-            diet.setAttribute('class', 'recipe-diet')
-            calories.setAttribute('class', 'recipe-calories')
-            servings.setAttribute('class', 'recipe-servings')
-            health.setAttribute('class', 'recipe-health')
-            ingredient.setAttribute('class', 'recipe-ingredient')
-            link.setAttribute('class', 'recipe-link')
-            img.setAttribute('class', 'recipe-img')
-
-            // set link URL
-            link.setAttribute('href', recipeLink)
-
-            // set img source
-            img.setAttribute('src', recipeImg)
+            $(title).attr('class', 'recipe-name')
+            $(diet).attr('class', 'recipe-diet')
+            $(calories).attr('class', 'recipe-calories')
+            $(servings).attr('class', 'recipe-servings')
+            $(health).attr('class', 'recipe-health')
+            $(ingredient).attr('class', 'recipe-ingredient')
+            $(link).attr('class', 'recipe-link').attr('href', recipeLink)
+            $(img).attr('class', 'recipe-img').attr('src', recipeImg)
             
             // convert calories to calories per serving
             calPerServing = (recipeCalories/recipeServings).toPrecision(4)
@@ -67,7 +69,9 @@ function getRecipes(e) {
             }
 
             // append to container
-            $(".container").append(title, diet, calories, servings, health, ingredient, link, img)
+            $(".container").append(title, diet, calories, servings, health, ingredient, link, img, form, button)
+            $(form).append(button)
+
         }
     })
 }
