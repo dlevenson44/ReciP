@@ -32,7 +32,7 @@ function getRecipes(e) {
             let recipeCalories = recipeArray[i].recipe.calories
             let recipeServings = recipeArray[i].recipe.yield
             let recipeHealth = recipeArray[i].recipe.healthLabels[0]
-            let recipeIngredients = recipeArray[i].recipe.ingredients[0].text
+            // let recipeIngredients = recipeArray[i].recipe.ingredients[0].text
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
@@ -72,7 +72,7 @@ function getRecipes(e) {
             $(calories).attr('class', 'recipe-calories')
             $(servings).attr('class', 'recipe-servings')
             $(health).attr('class', 'recipe-health')
-            $(ingredient).attr('class', 'recipe-ingredient')
+            // $(ingredient).attr('class', 'recipe-ingredient')
             $(link).attr('class', 'recipe-link').attr('href', recipeLink)
             $(img).attr('class', 'recipe-img').attr('src', recipeImg)
             
@@ -84,7 +84,7 @@ function getRecipes(e) {
             calories.innerHTML = calPerServing + ' calories per serving'
             servings.innerHTML = recipeServings + ' servings'
             health.innerHTML = recipeHealth
-            ingredient.innerHTML = recipeIngredients
+            // ingredient.innerHTML = recipeIngredients
             link.innerHTML = 'Click here for the full recipe'
 
             // only append diet label if available, display diet values
@@ -95,8 +95,18 @@ function getRecipes(e) {
             }
 
             // append to container
-            $(".container").append(title, diet, calories, servings, health, ingredient, link, img, form, button)
+            $(".container").append(title, calories, servings, health, link, img, form, button)
             $(form).append(button)
+
+
+            // list all ingredients
+            for (let i = 0; i < ingredients.length; i ++) {
+                let recipeIngredient = ingredients[i].text
+                let ingredient = document.createElement('p')
+                $(ingredient).attr('class', 'recipe-ingredient')
+                ingredient.innerHTML = recipeIngredient
+                $(".container").append(ingredient)
+            }
 
         }
     })
