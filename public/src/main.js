@@ -62,7 +62,7 @@ function getRecipes(e) {
             let calories = document.createElement('p')
             let servings = document.createElement('p')   
             let health = document.createElement('p')
-            let ingredient = document.createElement('p')
+            // let ingredient = document.createElement('p')
             let link = document.createElement('a') 
             let img = document.createElement('img')    
 
