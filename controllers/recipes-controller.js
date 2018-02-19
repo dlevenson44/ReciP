@@ -41,9 +41,13 @@ recipesController.create = (req, res) => {
 	console.log(req.body, 'from create/recipescontroller')
 	Recipe.create({
 		title: req.body.title,
-		link: req.body.link,
-		img: req.body.img,
 		diet: req.body.diet,
+		calories: req.body.calories,
+		servings: req.body.servings,
+		health: req.body.health,
+		ingredient: req.body.ingredient,
+		img: req.body.img,
+		link: req.body.link,		
 		user_id: req.user.id,
 	}).then(recipe => {
 		res.redirect(`/favorite_recipes`)
