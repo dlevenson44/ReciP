@@ -46,7 +46,7 @@ function getRecipes(e) {
 
             // initiate form and set attributes
             let form = document.createElement('form')
-            $(form).attr('method', 'POST').attr('action', '/favorite_recipes/').attr('class', 'add-form')
+            $(form).attr('class', 'add-form')
 
             // initiate button and set attributes
             let button = document.createElement('input')
