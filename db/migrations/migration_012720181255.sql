@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS favoriterecipes(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR,
 	diet VARCHAR, 
-	carories VARCHAR,
+	calories VARCHAR,
 	servings INT,
 	health VARCHAR,
 	ingredient VARCHAR,

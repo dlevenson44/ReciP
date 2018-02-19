@@ -20,22 +20,10 @@ Recipe.findById = id => {
 Recipe.create = (recipe, userid) => {
 	return db.one(`
 		INSERT INTO favoriterecipes
-		(title, link, img, diet, user_id)
-		VALUES ($1, $2, $3, $4, $5)
+		(title, diet, calories, servings, health, ingredient, link, img, user_id)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
 		RETURNING *
-		`, [recipe.title, recipe.link, recipe.img, recipe.diet, recipe.user_id, userid])
-}
-
-Recipe.update = (recipe, id) => {
-	return db.one(`
-		UPDATE favoriterecipes SET
-		title = $1,
-		link = $2, 
-		img = $3, 
-		diet = $4, 
-		user_id = $5, 
-		WHERE id = $6
-		RETURNING *`, [favoriterecipes.title, favoriterecipes.link, favoriterecipes.img, favoriterecipes.diet, favoriterecipes.user_id], id)
+		`, [recipe.title, recipe.diet, recipe.calories, recipe.servings, recipe.health, recipes.ingredient, recipe.link, recipe.img, recipe.user_id, userid])
 }
 
 Recipe.destroy = id => {
