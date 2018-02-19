@@ -23,7 +23,7 @@ Recipe.create = (recipe, userid) => {
 		(title, diet, calories, servings, health, ingredient, link, img, user_id)
 		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
 		RETURNING *
-		`, [recipe.title, recipe.diet, recipe.calories, recipe.servings, recipe.health, recipes.ingredient, recipe.link, recipe.img, recipe.user_id, userid])
+		`, [recipe.title, recipe.diet, recipe.calories, recipe.servings, recipe.health, recipe.ingredient, recipe.link, recipe.img, recipe.user_id, userid])
 }
 
 Recipe.destroy = id => {
