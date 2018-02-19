@@ -39,9 +39,13 @@ function getRecipes(e) {
             // initiate object to add favorite recipes
             const recipeFavorite = {
                 title: recipeName,
+                diet: recipeDiet,
+                calories: recipeCalories,
+                servings: recipeServings,
+                health: recipeHealth,
+                ingredient: ingredients,
                 link: recipeLink,
                 img: recipeImg,
-                diet: recipeDiet,
             }
 
             // initiate form and set attributes
