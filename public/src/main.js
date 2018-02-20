@@ -26,27 +26,17 @@ function getRecipes(e) {
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
             let healthLabels = recipeArray[i].recipe.healthLabels
-            let ingredients = recipeArray[i].recipe.ingredients
+            let ingredients = recipeArray[i].recipe.ingredientLines
             let recipeName = recipeArray[i].recipe.label
             let recipeDiet = recipeArray[i].recipe.dietLabels[0]
             let recipeCalories = recipeArray[i].recipe.calories
             let recipeServings = recipeArray[i].recipe.yield
             let recipeHealth = recipeArray[i].recipe.healthLabels[0]
-            // let recipeIngredients = recipeArray[i].recipe.ingredients[0].text
+            let recipeIngredients = []
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
-            // initiate object to add favorite recipes
-            const recipeFavorite = {
-                title: recipeName,
-                diet: recipeDiet,
-                calories: recipeCalories,
-                servings: recipeServings,
-                health: recipeHealth,
-                ingredient: ingredients,
-                link: recipeLink,
-                img: recipeImg,
-            }
+
 
             // initiate form and set attributes
             let form = document.createElement('form')
@@ -105,12 +95,26 @@ function getRecipes(e) {
 
             // list all ingredients
             for (let i = 0; i < ingredients.length; i ++) {
-                let recipeIngredient = ingredients[i].text
+                let unparsedIngredient = ingredients[i]
                 let ingredient = document.createElement('p')
                 $(ingredient).attr('class', 'recipe-ingredient')
-                ingredient.innerHTML = recipeIngredient
+                // ingredient.innerHTML = recipeIngredient
+                recipeIngredients.push(unparsedIngredient)
                 $(".container").append(ingredient)
             }
+
+            // initiate object to add favorite recipes
+            const recipeFavorite = {
+                title: recipeName,
+                diet: recipeDiet,
+                calories: calPerServing,
+                servings: recipeServings,
+                health: recipeHealth,
+                ingredient: JSON.stringify(recipeIngredients),
+                link: recipeLink,
+                img: recipeImg,
+            }
+            console.log(recipeFavorite.ingredient)
 
         }
     })
