@@ -110,6 +110,7 @@ function getRecipes(e) {
                 calories: calPerServing,
                 servings: recipeServings,
                 health: recipeHealth,
+                // ingredient: recipeIngredients,
                 ingredient: JSON.stringify(recipeIngredients),
                 link: recipeLink,
                 img: recipeImg,
