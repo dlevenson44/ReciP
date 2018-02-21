@@ -1,1 +1,24 @@
-<h1>hello world</h1>
+<% include ./partials/boilerplate %>
+
+<div class="index-container">
+
+    
+	
+	<% for (let recipes of data) { %>
+		<h1 class="title-result"><%= recipes.title %></h1>
+		<a class="link-result" href="<%= recipes.link %>">Recipe</a>
+        <img class="img-result" src="<%= recipes.img %>" />
+        <p><%= recipes.health %></p>
+
+		
+        
+
+
+		<form method="POST" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE">
+			<button class="nav-button" type="submit">Remove</button>
+		</form>
+    <% }  %>
+    
+
+
+<% include ./partials/end %>
