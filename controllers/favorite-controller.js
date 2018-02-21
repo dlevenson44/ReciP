@@ -14,18 +14,18 @@ favoritesController.index = (req, res) => {
 	})
 }
 
-favoritesController.show = (req, res) => {
-	Favorite.findById(req.params.id)
-	.then(favorite => {
-		res.status(200).render('favorite_recipes', {
-			auth: (req.user) ? true : false,
-			favorite: favorite,
-		})
-	}).catch(err => {
-		console.log(err)
-		res.status(500).json({error: err})
-	})
-}
+// favoritesController.show = (req, res) => {
+// 	Favorite.findById(req.params.id)
+// 	.then(favorite => {
+// 		res.status(200).render('favorite_recipes', {
+// 			auth: (req.user) ? true : false,
+// 			favorite: favorite,
+// 		})
+// 	}).catch(err => {
+// 		console.log(err)
+// 		res.status(500).json({error: err})
+// 	})
+// }
 
 // favoritesController.create = (req, res) => {
 // 	Favorite.create({
