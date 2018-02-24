@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS favoriterecipes(
 	calories VARCHAR,
 	servings INT,
 	health VARCHAR,
-	ingredient TEXT[],
+	ingredient TEXT,
 	link VARCHAR,
 	img VARCHAR
 );
