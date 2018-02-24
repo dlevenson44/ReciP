@@ -32,11 +32,14 @@ function getRecipes(e) {
             let recipeCalories = recipeArray[i].recipe.calories
             let recipeServings = recipeArray[i].recipe.yield
             let recipeHealth = recipeArray[i].recipe.healthLabels[0]
-            let recipeIngredients = []
+            // let recipeIngredients = []
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
-
+            // create object to store ingredients for FAVORITE POST
+            let allIngredients = {
+                recipeIngredients: [],
+            }
 
             // initiate form and set attributes
             let form = document.createElement('form')
@@ -99,7 +102,7 @@ function getRecipes(e) {
                 let ingredient = document.createElement('p')
                 $(ingredient).attr('class', 'recipe-ingredient')
                 // ingredient.innerHTML = recipeIngredient
-                recipeIngredients.push(unparsedIngredient)
+                allIngredients.recipeIngredients.push(unparsedIngredient)
                 $(".container").append(ingredient)
             }
 
@@ -111,7 +114,9 @@ function getRecipes(e) {
                 servings: recipeServings,
                 health: recipeHealth,
                 // ingredient: recipeIngredients,
-                ingredient: JSON.stringify(recipeIngredients),
+                // ingredient: JSON.stringify(recipeIngredients),
+                // ingredient: allIngredients,
+                ingredient: JSON.stringify(allIngredients),
                 link: recipeLink,
                 img: recipeImg,
             }
