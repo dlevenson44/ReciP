@@ -61,7 +61,6 @@ function getRecipes(e) {
             let calories = document.createElement('p')
             let servings = document.createElement('p')   
             let health = document.createElement('p')
-            // let ingredient = document.createElement('p')
             let link = document.createElement('a') 
             let img = document.createElement('img')    
 
@@ -71,7 +70,6 @@ function getRecipes(e) {
             $(calories).attr('class', 'recipe-calories')
             $(servings).attr('class', 'recipe-servings')
             $(health).attr('class', 'recipe-health')
-            // $(ingredient).attr('class', 'recipe-ingredient')
             $(link).attr('class', 'recipe-link').attr('href', recipeLink)
             $(img).attr('class', 'recipe-img').attr('src', recipeImg)
             
@@ -83,7 +81,6 @@ function getRecipes(e) {
             calories.innerHTML = calPerServing + ' calories per serving'
             servings.innerHTML = recipeServings + ' servings'
             health.innerHTML = recipeHealth
-            // ingredient.innerHTML = recipeIngredients
             link.innerHTML = 'Click here for the full recipe'
 
             // only append diet label if available, display diet values
