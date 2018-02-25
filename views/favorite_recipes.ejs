@@ -9,17 +9,17 @@
 		<a class="link-result" href="<%= recipes.link %>">Recipe</a>
         <img class="img-result" src="<%= recipes.img %>" />
 		<p><%= recipes.health %></p>
+		<ul>
 		<% var ingredient = recipes.ingredient.split("~") %>
-		<!-- <% console.log(typeof ingredient) %> -->
-		<p><%= ingredient %></p>
+		<% for(let i = 0; i < ingredient.length; i ++) { %>
+			<li><%= ingredient[i] %></li>
+		<% } %>
+		</ul>
 
 
 		<form method="POST" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE">
 			<button class="nav-button" type="submit">Remove</button>
 		</form>
     <% }  %>
-    
-<script src="src/jquery.js"></script>
-<!-- <script src="src/ingredients.js" ></script> -->
 
 <% include ./partials/end %>
