@@ -28,6 +28,7 @@ function getRecipes(e) {
         $(".recipe-link").remove()
         $(".recipe-img").remove()
         $(".submit-button").remove()
+        console.log(recipeArray)
         for (let i = 0; i < recipeArray.length; i++) {
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
@@ -39,7 +40,7 @@ function getRecipes(e) {
             let recipeServings = recipeArray[i].recipe.yield
             let recipeHealth = recipeArray[i].recipe.healthLabels[0]
             let recipeIngredients = ''
-            let recipeLink = recipeArray[i].recipe.shareAs
+            let recipeLink = recipeArray[i].recipe.url
             let recipeImg = recipeArray[i].recipe.image
 
             // initiate form and set attributes
@@ -80,7 +81,7 @@ function getRecipes(e) {
             calories.innerHTML = calPerServing + ' calories per serving'
             servings.innerHTML = recipeServings + ' servings'
             health.innerHTML = recipeHealth
-            link.innerHTML = 'Click here for the full recipe'
+            link.innerHTML = 'More Info'
 
             // only append diet label if available, display diet values
             if (dietLabels.length >= 1) {
