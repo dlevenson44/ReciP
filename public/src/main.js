@@ -7,7 +7,7 @@ const sendToDB = (recipeFavorite) => {
         data: recipeFavorite
     })
     .done((data) => {
-        console.log(data)
+        // console.log(data)
         window.location = `/favorite_recipes/`
     })
 }
@@ -19,7 +19,7 @@ function getRecipes(e) {
     fetch(`/recipe/${e.target.search.value}`)
     .then(res => res.json())
     .then(res => {
-        console.log(res)        
+        // console.log(res)        
         let recipeArray = res.recipe.hits
         $(".recipe-name").empty()
         for (let i = 0; i < recipeArray.length; i++) {
@@ -32,14 +32,14 @@ function getRecipes(e) {
             let recipeCalories = recipeArray[i].recipe.calories
             let recipeServings = recipeArray[i].recipe.yield
             let recipeHealth = recipeArray[i].recipe.healthLabels[0]
-            // let recipeIngredients = []
+            let recipeIngredients = ''
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
 
             // create object to store ingredients for FAVORITE POST
-            let allIngredients = {
-                recipeIngredients: [],
-            }
+            // let allIngredients = {
+            //     recipeIngredients: [],
+            // }
 
             // initiate form and set attributes
             let form = document.createElement('form')
@@ -97,13 +97,29 @@ function getRecipes(e) {
 
 
             // list all ingredients
+            // for (let i = 0; i < ingredients.length; i ++) {
+            //     let unparsedIngredient = ingredients[i]
+            //     let ingredient = document.createElement('p')
+            //     $(ingredient).attr('class', 'recipe-ingredient')
+            //     // ingredient.innerHTML = recipeIngredient
+            //     recipeIngredients.push(unparsedIngredient)
+            //     $(".container").append(ingredient)
+            // }
+
+            // list all ingredients
             for (let i = 0; i < ingredients.length; i ++) {
-                let unparsedIngredient = ingredients[i]
+                // let unparsedIngredient = ingredients[i]
                 let ingredient = document.createElement('p')
                 $(ingredient).attr('class', 'recipe-ingredient')
-                // ingredient.innerHTML = recipeIngredient
-                allIngredients.recipeIngredients.push(unparsedIngredient)
-                $(".container").append(ingredient)
+                // recipeIngredients += ingredients[i] + ", "
+                // console.log(recipeIngredients)
+                console.log(i, 'line 116')
+                let length = ingredients.length-1
+                if (i < length) {
+                    recipeIngredients += ingredients[i] + "~"
+                } else { 
+                    recipeIngredients += ingredients[i]
+                }
             }
 
             // initiate object to add favorite recipes
@@ -113,15 +129,10 @@ function getRecipes(e) {
                 calories: calPerServing,
                 servings: recipeServings,
                 health: recipeHealth,
-                // ingredient: recipeIngredients,
-                // ingredient: JSON.stringify(recipeIngredients),
-                // ingredient: allIngredients,
-                ingredient: JSON.stringify(allIngredients),
+                ingredient: recipeIngredients,
                 link: recipeLink,
                 img: recipeImg,
             }
-            console.log(recipeFavorite.ingredient)
-
         }
     })
 }
