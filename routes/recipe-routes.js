@@ -5,8 +5,6 @@ const recipeHelpers = require('../services/recipes/recipe-helpers')
 const recipesController = require('../controllers/recipes-controller')
 const usersController = require('../controllers/users-controller')
 
-// recipesRoutes.get('/', recipeHelpers.getRecipes, recipeHelpers.formatApiData, recipesController.index)
-
 recipesRoutes.get('/add', (req, res) => {
 	res.render('favorite_recipes', {
 		auth: (req.user) ? true : false,
