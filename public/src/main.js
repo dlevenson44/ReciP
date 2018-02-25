@@ -29,6 +29,19 @@ function getRecipes(e) {
         $(".recipe-img").remove()
         $(".submit-button").remove()
         for (let i = 0; i < recipeArray.length; i++) {
+            // create containers
+            let resultsContainer = document.createElement('div')
+            let resultsInfo = document.createElement('div')
+            let resultsImg = document.createElement('div')
+
+            // set class names
+            $(resultsContainer).attr('class', 'results-container')
+            $(resultsInfo).attr('class', 'results-info')
+            $(resultsImg).attr('class', 'results-img')
+
+            // append subdivs
+            $(resultsContainer).append(resultsInfo, resultsImg)
+            
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
             let healthLabels = recipeArray[i].recipe.healthLabels
@@ -90,12 +103,15 @@ function getRecipes(e) {
             }
 
             // append to container
-            $(".container").append(title, calories, servings, health, link, img, form)
+            // $(".container").append(title, calories, servings, health, link, img, form)
+            $(".results-info").append(title, calories, servings, health, link, form)
+            $(".results-img").append(img)
 
             // only display add to favorites button if user is logged in
             let buttonSet = $("#logout").html()
             if (buttonSet === '<a href="/auth/logout">Logout</a>') {
-                $(".container").append(button)
+                // $(".container").append(button)
+                $(".results-info").append(button)
             }
 
             // list all ingredients
