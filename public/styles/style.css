@@ -6,3 +6,8 @@
     background: green;
     height: 100vh;    
 }
+
+.form-container {
+    margin: auto;
+    padding-right: 200px;
+}
