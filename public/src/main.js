@@ -18,8 +18,7 @@ function getRecipes(e) {
     console.log('clickced')
     fetch(`/recipe/${e.target.search.value}`)
     .then(res => res.json())
-    .then(res => {
-        // console.log(res)        
+    .then(res => {    
         let recipeArray = res.recipe.hits        
         $(".recipe-name").remove()
         $(".recipe-diet").remove()
@@ -91,14 +90,18 @@ function getRecipes(e) {
             }
 
             // append to container
-            $(".container").append(title, calories, servings, health, link, img, form, button)
-            $(form).append(button)
+            $(".container").append(title, calories, servings, health, link, img, form)
+
+            // only display add to favorites button if user is logged in
+            let buttonSet = $("#logout").html()
+            if (buttonSet === '<a href="/auth/logout">Logout</a>') {
+                $(".container").append(button)
+            }
 
             // list all ingredients
             for (let i = 0; i < ingredients.length; i ++) {
                 let ingredient = document.createElement('p')
                 $(ingredient).attr('class', 'recipe-ingredient')
-                console.log(i, 'line 116')
                 let length = ingredients.length-1
                 if (i < length) {
                     recipeIngredients += ingredients[i] + "~"
