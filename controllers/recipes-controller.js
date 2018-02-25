@@ -10,6 +10,7 @@ recipesController.index = (req, res) => {
 			user: req.user,
 			auth: (req.user) ? true : false,
 			data: recipes,
+			// ingredient: recipes.ingredient,
 			// recipes: data.recipes
 		})
 	}).catch(err => {
@@ -24,7 +25,6 @@ recipesController.show = (req, res) => {
 		res.status(200).render('favorite_recipes', {recipe,
 			auth: (req.user) ? true : false,
 			recipe: recipe,
-			// ingredient: recipe.ingredients,
 		})
 	}).catch(err => {
 		console.log(err)
