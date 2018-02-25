@@ -1,19 +1,38 @@
 <header>
-<div class="nav-container">
-	<nav>
-		<div id="sidebar">
+	<div class="hidden-sm-down" id="nav-container">
+		<ul class="nav float-left">
+		<button class="nav-button"><a href="/">Home</a></button>
 		
-				<button class="nav-button"><a href="/">Home</a></button>
-			<% if (auth) { %>
-				<button class="nav-button"><a href="/favorite_recipes">Favorites</a></button>
-				<button class="nav-button" id="logout"><a href="/auth/logout">Logout</a></button>
-				<% } else { %>
-				<button class="nav-button"><a href="/auth/login">Login</a></button>
-				<button class="nav-button"><a href="/auth/register">Register</a></button>
-
-				<% } %>
-		
+		<% if (auth) { %>
+		<li><button class="nav-button"><a href="/favorite_recipes">Favorites</a></button></li>
+		<li><button class="nav-button" id="logout"><a href="/auth/logout">Logout</a></button></li>
+		<% } else { %>
+		<li><button class="nav-button"><a href="/auth/login">Login</a></button></li>
+		<li><button class="nav-button"><a href="/auth/register">Register</a></button></li>
+		<% } %>
+		</ul>
 	</div>
-	</nav>
-</div>
+	<div class="hidden-md-up" id="nav-container">
+		<div class="dropdown">
+			<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Menu
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<ul class="nav float-left">
+							<button class="nav-button"><a href="/">Home</a></button>
+							
+							<% if (auth) { %>
+							<li><button class="nav-button"><a href="/favorite_recipes">Favorites</a></button></li>
+							<li><button class="nav-button" id="logout"><a href="/auth/logout">Logout</a></button></li>
+							<% } else { %>
+							<li><button class="nav-button"><a href="/auth/login">Login</a></button></li>
+							<li><button class="nav-button"><a href="/auth/register">Register</a></button></li>
+							<% } %>
+							</ul>
+			</div>			
+		</div>
+	</div>
+		<h1 class="text-xl-right">ReciP</h1>
+		
+
 </header>
