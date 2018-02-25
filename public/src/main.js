@@ -28,7 +28,6 @@ function getRecipes(e) {
         $(".recipe-link").remove()
         $(".recipe-img").remove()
         $(".submit-button").remove()
-        console.log(recipeArray)
         for (let i = 0; i < recipeArray.length; i++) {
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
@@ -101,8 +100,6 @@ function getRecipes(e) {
 
             // list all ingredients
             for (let i = 0; i < ingredients.length; i ++) {
-                let ingredient = document.createElement('p')
-                $(ingredient).attr('class', 'recipe-ingredient')
                 let length = ingredients.length-1
                 if (i < length) {
                     recipeIngredients += ingredients[i] + "~"
