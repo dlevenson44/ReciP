@@ -10,8 +10,6 @@ recipesController.index = (req, res) => {
 			user: req.user,
 			auth: (req.user) ? true : false,
 			data: recipes,
-			// ingredient: recipes.ingredient,
-			// recipes: data.recipes
 		})
 	}).catch(err => {
 		console.log(err)
