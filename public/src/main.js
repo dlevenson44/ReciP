@@ -7,7 +7,7 @@ const sendToDB = (recipeFavorite) => {
         data: recipeFavorite
     })
     .done((data) => {
-        // console.log(data)
+
         window.location = `/favorite_recipes/`
     })
 }
@@ -20,8 +20,15 @@ function getRecipes(e) {
     .then(res => res.json())
     .then(res => {
         // console.log(res)        
-        let recipeArray = res.recipe.hits
-        $(".recipe-name").empty()
+        let recipeArray = res.recipe.hits        
+        $(".recipe-name").remove()
+        $(".recipe-diet").remove()
+        $(".recipe-calories").remove()
+        $(".recipe-servings").remove()
+        $(".recipe-health").remove()
+        $(".recipe-link").remove()
+        $(".recipe-img").remove()
+        $(".submit-button").remove()
         for (let i = 0; i < recipeArray.length; i++) {
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
@@ -35,11 +42,6 @@ function getRecipes(e) {
             let recipeIngredients = ''
             let recipeLink = recipeArray[i].recipe.shareAs
             let recipeImg = recipeArray[i].recipe.image
-
-            // create object to store ingredients for FAVORITE POST
-            // let allIngredients = {
-            //     recipeIngredients: [],
-            // }
 
             // initiate form and set attributes
             let form = document.createElement('form')
@@ -95,24 +97,10 @@ function getRecipes(e) {
             $(".container").append(title, calories, servings, health, link, img, form, button)
             $(form).append(button)
 
-
-            // list all ingredients
-            // for (let i = 0; i < ingredients.length; i ++) {
-            //     let unparsedIngredient = ingredients[i]
-            //     let ingredient = document.createElement('p')
-            //     $(ingredient).attr('class', 'recipe-ingredient')
-            //     // ingredient.innerHTML = recipeIngredient
-            //     recipeIngredients.push(unparsedIngredient)
-            //     $(".container").append(ingredient)
-            // }
-
             // list all ingredients
             for (let i = 0; i < ingredients.length; i ++) {
-                // let unparsedIngredient = ingredients[i]
                 let ingredient = document.createElement('p')
                 $(ingredient).attr('class', 'recipe-ingredient')
-                // recipeIngredients += ingredients[i] + ", "
-                // console.log(recipeIngredients)
                 console.log(i, 'line 116')
                 let length = ingredients.length-1
                 if (i < length) {
