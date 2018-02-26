@@ -17,7 +17,6 @@ body {
     height: 100vh;
     width: 100%;
     overflow: auto;
-    /* margin-top: 2.5%; */
 }
 
 #nav-container {
@@ -38,4 +37,14 @@ body {
 #results-container {
     background-color: red;
     margin-top: 3%;
+}
+
+.login-container {
+    margin-top: 20%;
+    margin-left: 35%;
+}
+
+.register-container {
+    margin-top: 20%;
+    margin-left: 25%;
 }
