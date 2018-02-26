@@ -11,11 +11,12 @@
 			<img class="img-result" src="<%= recipes.img %>" />		
 			<a class="link-result" href="<%= recipes.link %>">More Info</a>
 			<p class="info"><%= recipes.health %></p>
-			<p class="info"><%= recipes.diet %></p>
-			<p class="info"><%= recipes.calories %></p>
-			<p class="info"><%= recipes.servings %></p>
+			<p class="info">Diet-Label:  <%= recipes.diet %></p>			
+			<p class="info">Servings:  <%= recipes.servings %></p>
+			<p class="info">Calories per Serving:  <%= recipes.calories %></p>
 		</div>
 		<div class="ingredients">
+			<h5 class="ingredients-header">Ingredients:</h5>
 			<ul>
 				<% var ingredient = recipes.ingredient.split("~") %>
 				<% for(let i = 0; i < ingredient.length; i ++) { %>
@@ -23,7 +24,7 @@
 				<% } %>
 			</ul>
 			<form class="delete" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE" method="POST">
-				<button class="nav-button" type="submit">Remove</button>
+				<button class="nav-link" type="submit">Remove</button>
 			</form>
 
 
