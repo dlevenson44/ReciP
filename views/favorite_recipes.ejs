@@ -10,16 +10,16 @@
 		<div class="favorite-info">
 			<img class="img-result" src="<%= recipes.img %>" />		
 			<a class="link-result" href="<%= recipes.link %>">More Info</a>
-			<p><%= recipes.health %></p>
-			<p><%= recipes.diet %></p>
-			<p><%= recipes.calories %></p>
-			<p><%= recipes.servings %></p>
+			<p class="info"><%= recipes.health %></p>
+			<p class="info"><%= recipes.diet %></p>
+			<p class="info"><%= recipes.calories %></p>
+			<p class="info"><%= recipes.servings %></p>
 		</div>
 		<div class="ingredients">
 			<ul>
 				<% var ingredient = recipes.ingredient.split("~") %>
 				<% for(let i = 0; i < ingredient.length; i ++) { %>
-					<li><%= ingredient[i] %></li>
+					<li class="info"><%= ingredient[i] %></li>
 				<% } %>
 			</ul>
 			<form class="delete" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE" method="POST">
