@@ -1,20 +1,29 @@
 <% include ./partials/boilerplate %>
 
-<div class="index-container">
+<div class="favorites-container">
 
     
 	
-	<% for (let recipes of data) { %>
+	<% for (let recipes of data) { %>		
 		<h1 class="title-result"><%= recipes.title %></h1>
-		<a class="link-result" href="<%= recipes.link %>">More Info</a>
-        <img class="img-result" src="<%= recipes.img %>" />
-		<p><%= recipes.health %></p>
-		<ul>
-		<% var ingredient = recipes.ingredient.split("~") %>
-		<% for(let i = 0; i < ingredient.length; i ++) { %>
-			<li><%= ingredient[i] %></li>
-		<% } %>
-		</ul>
+		<div class="favorites-subcont">
+		<div class="favorite-info">
+			<img class="img-result" src="<%= recipes.img %>" />		
+			<a class="link-result" href="<%= recipes.link %>">More Info</a>
+			<p><%= recipes.health %></p>
+			<p><%= recipes.diet %></p>
+			<p><%= recipes.calories %></p>
+			<p><%= recipes.servings %></p>
+		</div>
+		<div class="ingredients">
+			<ul>
+				<% var ingredient = recipes.ingredient.split("~") %>
+				<% for(let i = 0; i < ingredient.length; i ++) { %>
+					<li><%= ingredient[i] %></li>
+				<% } %>
+			</ul>
+		</div>
+		</div>
 
 
 		<form method="POST" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE">
