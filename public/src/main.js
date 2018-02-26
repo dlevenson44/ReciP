@@ -19,45 +19,32 @@ function getRecipes(e) {
     fetch(`/recipe/${e.target.search.value}`)
     .then(res => res.json())
     .then(res => {    
+        // set results to variable
         let recipeArray = res.recipe.hits
+        // remove data after each search
         $(".row").remove()
-        // $(".col-lg-4 col-md-6 col-sm-12 col-xs-12").remove()
-        // $("#results-container").detach()
-        // $(".results-info").remove()
-        // $(".results-img").remove()
-        // $(".clearfix visible").remove()
-        // $(".recipe-name").remove()
-        // $(".recipe-diet").remove()
-        // $(".recipe-calories").remove()
-        // $(".recipe-servings").remove()
-        // $(".recipe-health").remove()
-        // $(".recipe-link").remove()
-        // $(".recipe-img").remove()
-        // $(".submit-button").remove()
 
+        // create row div for bootstrap styling and append to container        
         let resultsContainer = document.createElement('div')
-        $(resultsContainer).attr('class', 'row')
+        $(resultsContainer).attr('class', 'row').attr('id', 'results-container')
         $(".container").append(resultsContainer)
         
         for (let i = 0; i < recipeArray.length; i++) {
             
             
             // create containers
-            // let resultsContainer = document.createElement('div')
             let bootstrapContainer = document.createElement('div')
             let resultsInfo = document.createElement('div')
             let resultsImg = document.createElement('div')
             let clearFix = document.createElement('div')
 
             // set class names
-            // $(resultsContainer).attr('class', 'row')
             $(bootstrapContainer).attr('class', 'col-lg-4 col-md-6 col-sm-12 col-xs-12')
             $(resultsInfo).attr('class', 'results-info')
             $(resultsImg).attr('class', 'results-img')
             $(clearFix).attr('class', 'clearfix visible')
 
             // append subdivs
-            // $(".container").append(resultsContainer)
             $(resultsContainer).append(bootstrapContainer)
             $(bootstrapContainer).append(resultsInfo, resultsImg)
             
@@ -128,7 +115,6 @@ function getRecipes(e) {
             // only display add to favorites button if user is logged in
             let buttonSet = $("#logout").html()
             if (buttonSet === '<a href="/auth/logout">Logout</a>') {
-                // $(".container").append(button)
                 $(resultsInfo).append(button)
             }
 
