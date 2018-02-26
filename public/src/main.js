@@ -19,29 +19,47 @@ function getRecipes(e) {
     fetch(`/recipe/${e.target.search.value}`)
     .then(res => res.json())
     .then(res => {    
-        let recipeArray = res.recipe.hits        
-        $(".recipe-name").remove()
-        $(".recipe-diet").remove()
-        $(".recipe-calories").remove()
-        $(".recipe-servings").remove()
-        $(".recipe-health").remove()
-        $(".recipe-link").remove()
-        $(".recipe-img").remove()
-        $(".submit-button").remove()
+        let recipeArray = res.recipe.hits
+        $(".row").remove()
+        // $(".col-lg-4 col-md-6 col-sm-12 col-xs-12").remove()
+        // $("#results-container").detach()
+        // $(".results-info").remove()
+        // $(".results-img").remove()
+        // $(".clearfix visible").remove()
+        // $(".recipe-name").remove()
+        // $(".recipe-diet").remove()
+        // $(".recipe-calories").remove()
+        // $(".recipe-servings").remove()
+        // $(".recipe-health").remove()
+        // $(".recipe-link").remove()
+        // $(".recipe-img").remove()
+        // $(".submit-button").remove()
+
+        let resultsContainer = document.createElement('div')
+        $(resultsContainer).attr('class', 'row')
+        $(".container").append(resultsContainer)
+        
         for (let i = 0; i < recipeArray.length; i++) {
+            
+            
             // create containers
-            let resultsContainer = document.createElement('div')
+            // let resultsContainer = document.createElement('div')
+            let bootstrapContainer = document.createElement('div')
             let resultsInfo = document.createElement('div')
             let resultsImg = document.createElement('div')
+            let clearFix = document.createElement('div')
 
             // set class names
-            $(resultsContainer).attr('class', 'results-container')
+            // $(resultsContainer).attr('class', 'row')
+            $(bootstrapContainer).attr('class', 'col-lg-4 col-md-6 col-sm-12 col-xs-12')
             $(resultsInfo).attr('class', 'results-info')
             $(resultsImg).attr('class', 'results-img')
+            $(clearFix).attr('class', 'clearfix visible')
 
             // append subdivs
-            $(".row").append(resultsContainer)
-            $(resultsContainer).append(resultsInfo, resultsImg)
+            // $(".container").append(resultsContainer)
+            $(resultsContainer).append(bootstrapContainer)
+            $(bootstrapContainer).append(resultsInfo, resultsImg)
             
             // set API data to variables
             let dietLabels = recipeArray[i].recipe.dietLabels
@@ -104,7 +122,6 @@ function getRecipes(e) {
             }
 
             // append to container
-            // $(".container").append(title, calories, servings, health, link, img, form)
             $(resultsInfo).append(title, calories, servings, health, link, form)
             $(resultsImg).append(img)
 
@@ -137,7 +154,7 @@ function getRecipes(e) {
                 img: recipeImg,
             }
         }
-        console.log('done')
+        console.log('done')        
     })
 }
 
