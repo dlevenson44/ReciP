@@ -61,7 +61,7 @@ recipesController.delete = (req, res) => {
 	Recipe.destroy(req.params.id)
 	.then(() => {
 		res.redirect('/')
-	}).cathc(err => {
+	}).catch(err => {
 		res.status(500).json({
 			err,
 		})

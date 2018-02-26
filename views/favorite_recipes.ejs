@@ -22,9 +22,11 @@
 					<li><%= ingredient[i] %></li>
 				<% } %>
 			</ul>
-			<form method="POST" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE">
-				<button class="nav-button" type="submit">Remove Favorite</button>
+			<form class="delete" action="/favorite_recipes/<%= recipes.id %>?_method=DELETE" method="POST">
+				<button class="nav-button" type="submit">Remove</button>
 			</form>
+
+
 		</div>
 		</div>
 
