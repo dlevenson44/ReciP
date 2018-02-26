@@ -3,14 +3,14 @@
 
 	<div class="hidden-sm-down" id="nav-container">
 		<ul class="nav float-left">
-		<button class="nav-button"><a href="/">Home</a></button>
+		<button class="nav-button"><a href="/" class="nav-link">Home</a></button>
 		
 		<% if (auth) { %>
-		<li><button class="nav-button"><a href="/favorite_recipes">Favorites</a></button></li>
-		<li><button class="nav-button" id="logout"><a href="/auth/logout">Logout</a></button></li>
+		<li><button class="nav-button"><a href="/favorite_recipes" class="nav-link">Favorites</a></button></li>
+		<li><button class="nav-button" id="logout"><a href="/auth/logout" class="nav-link">Logout</a></button></li>
 		<% } else { %>
-		<li><button class="nav-button"><a href="/auth/login">Login</a></button></li>
-		<li><button class="nav-button"><a href="/auth/register">Register</a></button></li>
+		<li><button class="nav-button"><a href="/auth/login" class="nav-link">Login</a></button></li>
+		<li><button class="nav-button"><a href="/auth/register" class="nav-link">Register</a></button></li>
 		<% } %>
 		</ul>
 	</div>
@@ -21,14 +21,14 @@
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<ul class="nav float-left">
-							<button class="nav-button"><a href="/">Home</a></button>
+							<button class="nav-button"><a href="/" class="nav-link">Home</a></button>
 							
 							<% if (auth) { %>
-							<li><button class="nav-button"><a href="/favorite_recipes">Favorites</a></button></li>
-							<li><button class="nav-button" id="logout"><a href="/auth/logout">Logout</a></button></li>
+							<li><button class="nav-button"><a href="/favorite_recipes" class="nav-link">Favorites</a></button></li>
+							<li><button class="nav-button" id="logout"><a href="/auth/logout" class="nav-link">Logout</a></button></li>
 							<% } else { %>
-							<li><button class="nav-button"><a href="/auth/login">Login</a></button></li>
-							<li><button class="nav-button"><a href="/auth/register">Register</a></button></li>
+							<li><button class="nav-button"><a href="/auth/login" class="nav-link">Login</a></button></li>
+							<li><button class="nav-button"><a href="/auth/register" class="nav-link">Register</a></button></li>
 							<% } %>
 							</ul>
 			</div>			
