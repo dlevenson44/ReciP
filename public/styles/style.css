@@ -17,14 +17,25 @@ body {
     height: 100vh;
     width: 100%;
     overflow: auto;
+    /* margin-top: 2.5%; */
+}
+
+#nav-container {
+    margin-left: 10%;
+    margin-top: -1.5%;
 }
 
 .form-container {
-    margin: auto;
-    /* padding-right: 500px; */
+    margin-left: 40%;
+    margin-top: 4%;
 }
 
-.results-container {
+#main-header {
+    margin-right: 15%;
+    margin-top: 1.5%;
+}
+
+#results-container {
     background-color: red;
     margin-top: 3%;
 }
