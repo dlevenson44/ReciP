@@ -64,7 +64,12 @@ body {
 }
 
 .auth-submit {
+    color: #61BFAD;
     font-family: 'Concert One', cursive;
+}
+
+.auth-submit:hover {
+    border: 2px #61BFAD solid;
 }
 
 #results-container {    
