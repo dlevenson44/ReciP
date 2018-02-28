@@ -97,6 +97,11 @@ body {
     font-family: 'Concert One', cursive;
 }
 
+.recipe-diet {
+    color: #61BFAD;
+    font-family: 'Concert One', cursive;
+}
+
 .recipe-health {
     color: #61BFAD;
     font-family: 'Concert One', cursive;
@@ -105,10 +110,22 @@ body {
 .recipe-link {
     color: #61BFAD;
     font-family: 'Concert One', cursive;
+    text-decoration: underline;
 }
 
 .recipe-link:visited {
     color: #61BFAD;
+}
+
+.ingredients-header {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
+    color: #61BFAD;
+}
+
+.info {
+    color: #61BFAD;
+    font-family: 'Concert One', cursive;
 }
 
 .login-container {
@@ -142,19 +159,3 @@ body {
     margin-right: 2.5%;
 }
 
-.title-result {
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.link-result {
-    font-family: 'Concert One', cursive;
-}
-
-.info {
-    font-family: 'Concert One', cursive;
-}
-
-.ingredients-header {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: bolder;
-}

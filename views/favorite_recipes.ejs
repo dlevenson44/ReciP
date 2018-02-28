@@ -4,16 +4,16 @@
 
     
 	
-	<% for (let recipes of data) { %>		
-		<h1 class="title-result"><%= recipes.title %></h1>
+	<% for (let recipes of data) { %>	
+		<h1 class="recipe-name"><%= recipes.title %></h1>
 		<div class="favorites-subcont">
 		<div class="favorite-info">
 			<img class="img-result" src="<%= recipes.img %>" />		
-			<a class="link-result" href="<%= recipes.link %>">More Info</a>
-			<p class="info"><%= recipes.health %></p>
-			<p class="info">Diet-Label:  <%= recipes.diet %></p>			
-			<p class="info">Servings:  <%= recipes.servings %></p>
-			<p class="info">Calories per Serving:  <%= recipes.calories %></p>
+			<a class="recipe-link" href="<%= recipes.link %>">More Info</a>
+			<p class="recipe-health"><%= recipes.health %></p>
+			<p class="recipe-diet">Diet-Label:  <%= recipes.diet %></p>			
+			<p class="recipe-servings">Servings:  <%= recipes.servings %></p>
+			<p class="recipe-calories">Calories per Serving:  <%= recipes.calories %></p>
 		</div>
 		<div class="ingredients">
 			<h5 class="ingredients-header">Ingredients:</h5>
