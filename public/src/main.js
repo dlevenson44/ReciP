@@ -39,7 +39,7 @@ function getRecipes(e) {
             let clearFix = document.createElement('div')
 
             // set class names
-            $(bootstrapContainer).attr('class', 'col-lg-4 col-md-6 col-sm-12 col-xs-12')
+            $(bootstrapContainer).attr('class', 'col-lg-4 col-md-6 col-sm-12 col-xs-12').attr('id', 'result')
             $(resultsInfo).attr('class', 'results-info')
             $(resultsImg).attr('class', 'results-img')
             $(clearFix).attr('class', 'clearfix visible')
