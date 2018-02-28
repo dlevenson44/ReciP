@@ -24,11 +24,22 @@ body {
 }
 
 .nav-button {
+    background-color: #F0EAD6;
+    border: 2px #61BFAD solid;
     margin: 5px;
 }
 
+.nav-button:hover {
+    background-color: #61BFAD;
+}
+
 .nav-link {
+    color: #61BFAD;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav-link:hover {
+    color: #F0EAD6;
 }
 
 .form-container {
