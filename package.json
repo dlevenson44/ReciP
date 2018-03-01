@@ -11,7 +11,8 @@
     "debugger": "DEBUG=*:* nodemon server.js"
   },
   "engines": {
-    "node": "8.5.0"
+    "node": "8.5.0",
+    "yarn": "1.3.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
