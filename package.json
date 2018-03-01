@@ -1,7 +1,7 @@
 {
   "name": "ReciP",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "git@github.com:dlevenson44/ReciP.git",
   "author": "Daniel Levenson <daniellevenson4@gmail.com>",
   "license": "MIT",
