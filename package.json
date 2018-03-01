@@ -6,7 +6,7 @@
   "author": "Daniel Levenson <daniellevenson4@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "yarn start",
     "dev": "nodemon server.js",
     "debugger": "DEBUG=*:* nodemon server.js"
   },
